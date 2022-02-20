@@ -90,6 +90,10 @@ function saveLocalTodos(todo) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
+<<<<<<< HEAD
+=======
+  todos.push(todo);
+>>>>>>> 331e107 (local storage)
 }
 
 function getTodos() {
