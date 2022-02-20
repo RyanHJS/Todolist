@@ -91,9 +91,13 @@ function saveLocalTodos(todo) {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   todos.push(todo);
 >>>>>>> 331e107 (local storage)
+=======
+  todos.push(todo);
+>>>>>>> 331e107e2bbb2d78494f5230de5cd3673b71b709
 }
 
 function getTodos() {
