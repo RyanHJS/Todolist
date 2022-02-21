@@ -5,7 +5,7 @@ const todoList = document.querySelector(".todo-list");
 const filterOption = document.querySelector(".filter-todo");
 
 // Event Listeners
-/*document.addEventListener("DOMContentLoaded", "getTodos");*/
+document.addEventListener("DOMContentLoaded", "getTodos");
 todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteCheck);
 filterOption.addEventListener("click", filterTodo);
@@ -22,7 +22,7 @@ function addTodo(event) {
   newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   todoDIv.appendChild(newTodo);
-  saveLocalTodos(todoInput.value);
+  /*saveLocalTodos(todoInput.value);*/
   //Completed Button
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -86,23 +86,12 @@ function saveLocalTodos(todo) {
   let todos;
 
   if (localStorage.getItem("todos") === null) {
-    todos = [];
+    todo = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-<<<<<<< HEAD
   todos.push(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-  todos.push(todo);
->>>>>>> 331e107 (local storage)
-=======
-  todos.push(todo);
->>>>>>> 331e107e2bbb2d78494f5230de5cd3673b71b709
->>>>>>> 63460bc64ff6c9b11523e5db091be76161d557da
 }
 
 function getTodos() {
