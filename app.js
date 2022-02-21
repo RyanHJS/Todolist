@@ -22,7 +22,7 @@ function addTodo(event) {
   newTodo.innerText = todoInput.value;
   newTodo.classList.add("todo-item");
   todoDIv.appendChild(newTodo);
-  /*saveLocalTodos(todoInput.value);*/
+  saveLocalTodos(todoInput.value);
   //Completed Button
   const completedButton = document.createElement("button");
   completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -86,10 +86,12 @@ function saveLocalTodos(todo) {
   let todos;
 
   if (localStorage.getItem("todos") === null) {
-    todo = [];
+    todos = [];
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
+  todos.push(todo);
+  localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function getTodos() {
